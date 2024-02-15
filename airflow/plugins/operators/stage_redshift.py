@@ -72,7 +72,7 @@ class StageToRedshiftOperator(BaseOperator):
                 self.json_path,
                 self.execution_date
             )
-            redshift.run(copy_sql_time)
+        redshift.run(copy_sql_time)
         else:
             formatted_sql = StageToRedshiftOperator.copy_sql.format(
                 self.table, 
