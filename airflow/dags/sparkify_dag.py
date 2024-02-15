@@ -19,7 +19,8 @@ default_args = {
     'retries': 5,
     'retry_delay': timedelta(minutes=5),
     'catchup': False,
-    'retry_delay': timedelta(minutes=5)
+    'retry_delay': timedelta(minutes=5),
+    'schedule_interval': '@hourly'
 }
 
 dag = DAG(
