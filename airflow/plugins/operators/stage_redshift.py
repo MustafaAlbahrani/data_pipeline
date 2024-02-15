@@ -13,7 +13,14 @@ class StageToRedshiftOperator(BaseOperator):
     s3_path (string): The data source where to get data from          
     
     '''
-
+    copy_sql_time= """
+        COPY {} 
+        FROM '{}/{}/{}/'
+        ACCESS_KEY_ID '{}'
+        SECRET_ACCESS_KEY '{}'
+        JSON '{}';
+    """
+    
     copy_sql_date = """
         COPY {} 
         FROM '{}/{}/{}/'
